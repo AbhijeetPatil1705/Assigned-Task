@@ -1,0 +1,33 @@
+<div>
+<p>Please select your Location</p>
+<form>
+  <select [(ngModel)]="selectedCity" name="name" (ngModelChange)="onCitySelect($event)">
+    <option value="default">Choose City</option>
+   <option *ngFor="let cityName of dropdownData">{{cityName}}</option>
+   <option>All</option>
+  </select><br>
+  <button (click)="pdfDownload()">Download PDF</button>
+</form>
+<hr>
+
+<div id="content">
+<table class="student-table table table-dark">
+    <thead>
+        <tr >
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Marks</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of studentData">
+            <td>{{student.rollno}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.address.city}}-{{student.address.pincode}}</td>
+            <td>{{student.marks}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>

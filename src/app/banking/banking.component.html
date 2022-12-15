@@ -1,0 +1,77 @@
+<div>
+    <form [formGroup]="bankForm">
+        <div class="row">
+            <div class="col-md-12">
+                <table>
+                    <tr>
+                        <th *ngFor="let fd of headDetails">{{fd}}</th>
+                    </tr>
+                    <tbody formArrayName="oAmountDetails">
+                        <tr *ngFor="let details of bankForm.controls.oAmountDetails.controls;let i=index"
+                            [formGroupName]="i">
+                            <td>
+                                <!-- <mat-form-field appearance="fill">
+                                    <mat-label>Favorite food</mat-label>
+                                    <mat-select name="sd" formControlName="sAmountInLastThreeMonths" required>
+                                      <mat-option *ngFor="let sd of lastThreeMonths" [value]="sd.value" [disabled]="sd.selected">{{sd.viewValue}}
+                                      </mat-option>
+                                    </mat-select>
+                                  </mat-form-field> -->
+
+                                <select name="option" formControlName="sAmountInLastThreeMonths" required (selectionChange)="onMonthSelect($event)">
+                                    <option disabled selected>Select Month</option>
+                                    <option *ngFor="let sd of lastThreeMonths" [value]="sd.value">{{sd.viewValue}}
+                                    </option>
+                                </select>
+                                <div *ngIf="bankForm.controls.oAmountDetails.controls[i].controls.sAmountInLastThreeMonths.errors &&
+                            bankForm.controls.oAmountDetails.controls[i].controls.sAmountInLastThreeMonths.touched">
+                                    <span class="redColor"
+                                        *ngIf="bankForm.controls.oAmountDetails.controls[i].controls.sAmountInLastThreeMonths.errors?.['required']">It
+                                        is required</span>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="number" placeholder="Please Enter Credit amount"
+                                    formControlName="sCreditedAmt" required />
+                                <div *ngIf="bankForm.controls.oAmountDetails.controls[i].controls.sCreditedAmt.errors &&
+                            bankForm.controls.oAmountDetails.controls[i].controls.sCreditedAmt.touched">
+                                    <span class="redColor"
+                                        *ngIf="bankForm.controls.oAmountDetails.controls[i].controls.sCreditedAmt.errors?.['required']">It
+                                        is required</span>
+                                </div>
+                            </td>
+
+                            <td>
+                                <input type="number" placeholder="Please Enter Debit amount"
+                                    formControlName="sDebitedAmt" required />
+                                <div *ngIf="bankForm.controls.oAmountDetails.controls[i].controls.sDebitedAmt.errors &&
+                            bankForm.controls.oAmountDetails.controls[i].controls.sDebitedAmt.touched">
+                                    <span class="redColor"
+                                        *ngIf="bankForm.controls.oAmountDetails.controls[i].controls.sDebitedAmt.errors?.['required']">It
+                                        is required</span>
+                                </div>
+                            </td>
+
+                            <td>
+                                <input type="number" placeholder="Please Enter Balance amount"
+                                    formControlName="sBalanceAmt" required />
+                                <div *ngIf="bankForm.controls.oAmountDetails.controls[i].controls.sBalanceAmt.errors &&
+                            bankForm.controls.oAmountDetails.controls[i].controls.sBalanceAmt.touched">
+                                    <span class="redColor"
+                                        *ngIf="bankForm.controls.oAmountDetails.controls[i].controls.sBalanceAmt.errors?.['required']">It
+                                        is required</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="submit" (click)="bankFormSubmit(bankForm.value)"
+                    [disabled]="bankForm.invalid">Save</button>
+            </div>
+        </div>
+    </form>
+    <div >
+        <button [disabled]="!showBtn">click</button>
+    </div>
+    
+</div>

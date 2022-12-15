@@ -1,0 +1,11 @@
+nav{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(206, 153, 153);
+    border: 1px solid black;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right:0;
+    color: black;
+}

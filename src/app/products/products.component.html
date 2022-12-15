@@ -1,0 +1,31 @@
+<div class="containerMain">
+    <div class="navbarSide">
+       <select [(ngModel)]="selectProductValue" (ngModelChange)="selectedProducts($event)">
+        <option selected> Select Product</option>
+        <option *ngFor="let fd of productResponse">{{fd?.title}}</option>
+       </select>
+    </div>
+    <div class="content" *ngFor="let sd of selectedProductList">
+        <p>title:{{sd.title}}</p>
+       <p>Brand:{{sd.brand}}</p>
+       <p>category:{{sd.category}}</p>
+       <p>discountPercentage:{{sd.discountPercentage}}</p>
+       <p>price:{{sd.price}}</p>
+       <p>rating:{{sd.rating}}</p>
+       <p>stock:{{sd.stock}}</p>
+       <p>description:{{sd.description}}</p>
+       <span>thumnail:</span>
+       
+       <div class="images">
+        <img src="{{sd.thumbnail}}"/>
+       </div>
+       <span>Images: </span>
+       <div class="image">
+       <img src="{{sd.images[0]}}"/>
+       <img src="{{sd.images[1]}}"  />
+       <img src="{{sd.images[2]}}"  />
+       <img src="{{sd.images[3]}}"  />
+       </div>
+    </div>
+    
+</div>

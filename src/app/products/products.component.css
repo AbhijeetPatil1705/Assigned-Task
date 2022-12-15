@@ -1,0 +1,35 @@
+.images img{
+    width: 200px;
+    height: 200px;
+}
+.image img{
+    width: 200px;
+    height: 200px;
+}
+.containerMain{
+    display: flex;
+}
+.content{
+    /* display: flex;
+    justify-content: center; */
+    padding: 20px;
+    margin-left: 5px;
+    border: 1px solid;
+    padding-top: 3px;
+    margin-bottom: 62px;
+}
+.navbarSide{
+    margin-top: 40px;
+    
+}
+.navbarSide select{
+    height: 28px;
+    border-radius: 20px;
+    background-color: voilet;
+    background-color: blueviolet;
+    color: white;
+    font-size: 14px;
+}
+.content p{
+    font-size: 16px;
+}

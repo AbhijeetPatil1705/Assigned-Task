@@ -1,0 +1,36 @@
+.container {
+    margin-top: 100px;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    background-color: blueviolet;
+    border: 1px solid black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right:0;
+    color: white;
+}
+.list li a{
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    color: white;
+    font-size: 18px;    
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 100;
+}
+.list li{
+    list-style-type: none;
+}
+button {
+    cursor: pointer;
+        margin: 15px;
+        background: green;
+        color: black;
+        border: none;
+        padding: 10px;
+  
+}

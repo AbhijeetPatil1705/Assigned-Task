@@ -1,0 +1,18 @@
+table td, th{
+    border: 1px solid black; 
+    font-size: 18px;
+    
+}
+.student-table{
+    width: 500px;
+    height: 200px;
+    border-collapse: collapse;
+}
+table td {
+    text-align: center;
+}
+select {
+    padding: 5px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
