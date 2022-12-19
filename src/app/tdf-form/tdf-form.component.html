@@ -1,0 +1,79 @@
+<div>
+    <form #basicForm="ngForm" (ngSubmit)="addDetails(basicForm.value)">
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="name">Expense Name</label>
+                <input type="text" class="form-control" id="expenseName" ngModel name="expenseName"
+                    #expenseName="ngModel" placeholder="Expense Name" required>
+                <div *ngIf="expenseName?.touched && expenseName?.invalid" class="invalid-feedback">
+                    Please choose a Expense Name.
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="amount">Expense Amount</label>
+                <input type="number" class="form-control" id="expenseAmount" ngModel name="expenseAmount"
+                    #expenseAmount="ngModel" placeholder="Expense Amount" required>
+                <div class="text-danger" *ngIf="basicForm.controls['expenseAmount'].touched &&
+                basicForm.hasError('required','expenseAmount')">
+                    Please choose a Expense Name.
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Payment Mode :</label>
+            <select class="form-select form-control widthAdjust" aria-label="Default select example" ngModel #drop="ngModel"
+                name="drop" required>
+                <option selected>Please select Payment mode</option>
+                <option>Cash Payment</option>
+                <option>UPI Payment</option>
+                <option>Online Payment</option>
+            </select>
+            <span class="text-danger" *ngIf="basicForm.controls['drop'].touched && 
+            basicForm.hasError('required','drop')">It is required</span>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary adjust">Add</button>   
+            <button type="submit" class="btn btn-primary adjust" (click)="updateDataList()">Update</button>
+        </div>
+         
+    </form>
+</div>
+<br>
+
+<div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th><input type="checkbox" value="-1" [(ngModel)]="parentSelector"
+                    (change)="onChangeCheck($event)"></th>
+                <th>ID</th>
+                <th>Expense Name</th>
+                <th>Expense Amount</th>
+                <th>Payment Mode</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let fd of tableData; let i = index">
+                <td><input type="checkbox" value="{{fd.id}}" [checked]="fd.select" (change)="onChangeCheck($event)"></td>
+                <td>{{fd.id}}</td>
+                <td>{{fd.expenseName}}</td>
+                <td>{{fd.expenseAmount}}</td>
+                <td>{{fd.drop}}</td>
+                <td>
+                    <button type="button" class="btn btn-primary adjust" (click)="editData(fd.id)">Edit</button>
+                    <button type="button" class="btn btn-primary adjust" (click)="deleteData(fd.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <button type="submit" class="btn btn-primary adjust" (click)="deleteList($event)">Delete seletced data</button>
+    </div>
+</div>
+<div>
+    <input type="text" #para [(ngModel)]="name"/>
+    {{name}}
+</div>

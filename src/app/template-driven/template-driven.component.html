@@ -1,0 +1,55 @@
+<div>
+    <form #templateForm="ngForm" (ngSubmit)="templateSubmit(templateForm.value)">
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="usename">User Name:</label>
+                <input type="text" class="form-control" placeholder="Please Enter user name" id="userName"  name="userName" #userName="ngModel" ngModel required/>
+                <div class="text-danger" *ngIf="templateForm.controls['userName'].touched && templateForm.hasError('required','userName')">
+                    It is required
+                </div>
+            </div> 
+            <div class="col-md-4 mb-3">
+            <label for="password">Passwoed:</label>
+            <input type="password" name="password" placeholder="Please Enter password" class="form-control" ngModel required #password="ngModel"/>
+            <div class="text-danger" *ngIf="templateForm.controls['password'].touched && templateForm.hasError('required','password')">
+                It is required
+            </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="password">Email ID:</label>
+                <input type="email" name="email" placeholder="Please Enter Email ID" class="form-control" ngModel required #email="ngModel"/>
+                <div class="text-danger" *ngIf="templateForm.controls['email'].touched && templateForm.hasError('required','email')">
+                    It is required
+                </div>
+                </div>
+            <button type="submit" class="btn btn-primary adjust">Save</button>
+            <button type="submit" class="btn btn-primary adjust" (click)="updateData()">Update</button>
+        </div>
+    </form>
+</div>
+<br>
+<div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>User Name</th>
+                <th>Password</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let sd of tableTemplateDriven let i=index">
+                <td>{{sd.id}}</td>
+                <td>{{sd.userName}}</td>
+                <td>{{sd.password}}</td>
+                <td>{{sd.email}}</td>
+                <td>
+                    <button class="btn btn-primary adjust" (click)="editData(sd.id)">Edit</button>
+                    <button class="btn btn-primary adjust" (click)="deleteData(sd.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

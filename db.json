@@ -1,0 +1,50 @@
+{
+  "expenseData": [
+    {
+      "expenseName": "abhijeet",
+      "expenseAmount": 5000,
+      "drop": "UPI Payment",
+      "id": 1
+    },
+    {
+      "expenseName": "abhijeet",
+      "expenseAmount": 8050,
+      "drop": "Cash Payment",
+      "id": 2
+    }
+  ],
+  "template-drivenData": [
+    {
+      "userName": "abhijeetpatil",
+      "password": "Login@123",
+      "email": "patilabhijeet@gmail.com",
+      "id": 2
+    },
+    {
+      "userName": "abhi",
+      "password": "gfhfh",
+      "email": "patilabhijeet1705@gmail.com",
+      "id": 3
+    },
+    {
+      "userName": "abhijeetpatil",
+      "password": "Login@123",
+      "email": "patilabhijeet@gmail.com",
+      "id": 4
+    }
+  ],
+  "reactive": [
+    {
+      "firstName": "Abhijeet",
+      "lastName": "Dhoble",
+      "email": "patilabhijeet1705@gmail.com",
+      "id": 1
+    },
+    {
+      "firstName": "Abhi",
+      "lastName": "Patil",
+      "email": "patilabhi705@gmail.com",
+      "id": 3
+    }
+  ]
+}

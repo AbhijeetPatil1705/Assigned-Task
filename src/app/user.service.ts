@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Subject } from 'rxjs';
@@ -7,7 +8,7 @@ import { BehaviorSubject, Subject } from 'rxjs';
 })
 export class UserService {
  subjectBtnEnabled = new Subject<any>();
-  constructor(private router:Router) { }
+  constructor(private router:Router,private _http:HttpClient) { }
   reFresh(){
     if(localStorage.getItem('user')){
      this.router.navigate(['dash']);
@@ -20,4 +21,6 @@ export class UserService {
   btnEnabled(data:any){
     this.subjectBtnEnabled.next(data);
   }
+
+ 
 }

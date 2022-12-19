@@ -16,6 +16,10 @@ import { BankingComponent } from './banking/banking.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import { TdfFormComponent } from './tdf-form/tdf-form.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { TemplateDrivenComponent } from './template-driven/template-driven.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +29,17 @@ import {MatSelectModule} from '@angular/material/select';
     FooterComponent,
     StudentsComponent,
     ProductsComponent,
-    BankingComponent
+    BankingComponent,
+    TdfFormComponent,
+    TemplateDrivenComponent,
+    ReactiveFormComponent,
+    
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,ReactiveFormsModule,HttpClientModule,MatSlideToggleModule,
-    MatInputModule,MatSelectModule
+    MatInputModule,MatSelectModule,MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent],

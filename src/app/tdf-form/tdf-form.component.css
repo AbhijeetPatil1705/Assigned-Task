@@ -1,0 +1,15 @@
+.widthAdjust{
+    width: 34%;
+}
+.adjust{
+    margin-top: 14px;
+    margin-left: 10px;
+}
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+  
+  .invalid-feedback {
+    display: block;
+    color: red;
+  }
